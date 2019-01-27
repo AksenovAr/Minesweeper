@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>view.qml</file>
+        <file>images/Minesweeper_1.png</file>
+        <file>images/Minesweeper_2.png</file>
+        <file>images/Minesweeper_3.png</file>
+        <file>images/Minesweeper_4.png</file>
+        <file>images/Minesweeper_5.png</file>
+        <file>images/Minesweeper_6.png</file>
+        <file>images/Minesweeper_7.png</file>
+        <file>images/Minesweeper_8.png</file>
+        <file>images/Minesweeper_boom.png</file>
+        <file>images/Minesweeper_close.png</file>
+        <file>images/Minesweeper_flag.jpg</file>
+        <file>images/Minesweeper_mine.jpg</file>
+        <file>images/Minesweeper_open.jpg</file>
+        <file>images/Minesweeper_sad.png</file>
+        <file>images/Minesweeper_smile.png</file>
+        <file>images/star.jpg</file>
+        <file>images/tile3.ico</file>
+        <file>winico.ico</file>
+    </qresource>
+</RCC>
