@@ -12,6 +12,14 @@
 //![0]
 int main(int argc, char ** argv)
 {
+    QStringList paths = QCoreApplication::libraryPaths();
+    paths.append(".");
+    paths.append("imageformats");
+    paths.append("platforms");
+    paths.append("bearer");
+    paths.append("qmltooling");
+    QCoreApplication::setLibraryPaths(paths);
+
     QGuiApplication app(argc, argv);
     app.setWindowIcon(QIcon(":/images/tile3.ico"));
 
