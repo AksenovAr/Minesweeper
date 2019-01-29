@@ -79,4 +79,4 @@ private:
 
 };
 
-#endif // GAMEOFLIFEMODEL_H
+#endif 
