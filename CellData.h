@@ -25,4 +25,4 @@ public:
     bool m_isBoom;
 };
 
-#endif // DOT_H
+#endif // END iF
