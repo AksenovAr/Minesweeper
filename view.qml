@@ -251,11 +251,11 @@ ApplicationWindow {
                     var q_model_index = mineSweeperModel.index(ro, col, parent);
                     if (mouse.button === Qt.LeftButton) {
 
-                        mineSweeperModel.setData(q_model_index, 0, 0);
+                         model.value = 0;
                     }
                     if (mouse.button === Qt.RightButton) {
 
-                        mineSweeperModel.setData(q_model_index, 1, 0);
+                         model.value = 1;
                     }
                     console.log("data change successful?", q_model_index);
                 }
