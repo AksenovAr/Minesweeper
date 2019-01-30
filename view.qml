@@ -118,22 +118,36 @@ ApplicationWindow {
 
             id: layout
             spacing: 2
+            width: parent.width
             anchors.fill: parent
-            anchors.horizontalCenter: parent.horizontalCenter
+            //-------------------------
             Rectangle {
 
-                id: smileRect
-                anchors.horizontalCenter : parent.horizontalCenter
-                width: 50
-                height: parent.height
-                radius: 24
-                color: smileRect.down ? "#d6d6d6" : "#f6f6f6"
-                Image{
+                id: rectTimer
+                width: 70
+                height: header.height - 5
+                color: "#f6f6f6"
+                border.color: "black"
+                border.width: 2
+                radius: 10
+                //anchors.leftMargin: 10
+                anchors.verticalCenter : parent.verticalCenter
 
+                Text  {
+                    id: labelTest
+                    font.pixelSize: 30
+                    property int timeinsec: 0
+                    text: timeinsec
+                    anchors.centerIn: parent
+                }
+            }
+
+            Rectangle {
+                id: smilerect
+                anchors.left: parent.horizontalCenter
+                Image{
                     id: smile
                     source: showpopupboom()
-                    anchors.centerIn: parent
-
                     function showpopupboom() {
 
                         if ( mineSweeperModel.BOOM ) {
@@ -159,26 +173,6 @@ ApplicationWindow {
                             gameTimer.restart();
                         }
                     }
-                }
-            }
-            //-------------------------
-            Rectangle {
-
-                id: rectTimer
-                width: 70
-                height: header.height - 5
-                color: "#f6f6f6"
-                border.color: "black"
-                border.width: 2
-                radius: 10
-                anchors.leftMargin: 10
-                anchors.verticalCenter : parent.verticalCenter
-                Text  {
-                    id: labelTest
-                    font.pixelSize: 30
-                    property int timeinsec: 0
-                    text: timeinsec
-                    anchors.centerIn: parent
                 }
             }
 
@@ -251,11 +245,11 @@ ApplicationWindow {
                     var q_model_index = mineSweeperModel.index(ro, col, parent);
                     if (mouse.button === Qt.LeftButton) {
 
-                         model.value = 0;
+                        model.value = 0;
                     }
                     if (mouse.button === Qt.RightButton) {
 
-                         model.value = 1;
+                        model.value = 1;
                     }
                     console.log("data change successful?", q_model_index);
                 }
