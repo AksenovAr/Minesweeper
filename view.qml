@@ -228,6 +228,10 @@ ApplicationWindow {
             border.color: "black"
             border.width: 2
             radius: 10
+
+            property int ro: row
+            property int col: column
+
             Image {
 
                 id: imagenCentro
@@ -244,22 +248,14 @@ ApplicationWindow {
                 acceptedButtons: Qt.AllButtons;
                 onClicked: {
 
-                    var col = Math.floor((context.x + mouse.x) / context.implicitWidth)
-                    var column_number = Math.floor((context.x + col) / context.implicitWidth);
-
-                    var row = Math.floor((context.y + mouse.y) / context.implicitHeight);
-                    var row_number = Math.floor((context.y + row) / context.implicitHeight);
-
-                    var q_model_index = mineSweeperModel.index(row_number, column_number, parent);
-                    var role = 0
-
+                    var q_model_index = mineSweeperModel.index(ro, col, parent);
                     if (mouse.button === Qt.LeftButton) {
 
-                        var data_changed = mineSweeperModel.setData(q_model_index, 0, role);
+                        mineSweeperModel.setData(q_model_index, 0, 0);
                     }
                     if (mouse.button === Qt.RightButton) {
 
-                        data_changed = mineSweeperModel.setData(q_model_index, 1, role);
+                        mineSweeperModel.setData(q_model_index, 1, 0);
                     }
                     console.log("data change successful?", q_model_index);
                 }
